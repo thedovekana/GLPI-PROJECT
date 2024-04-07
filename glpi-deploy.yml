@@ -14,8 +14,6 @@
         mode: '0644'
 
     - name: Deploy services using Docker Compose
-      command: docker-compose up -d
-      args:
-        chdir: $PWD
+      command: cd /home/vagrant/ && docker-compose up -d
 
 
