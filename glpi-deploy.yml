@@ -1,4 +1,5 @@
-me: Deploy GLPI and MySQL using Docker Compose
+---
+- name: Deploy GLPI and MySQL using Docker Compose
   hosts: dockerx
   become: true
   tasks:
@@ -16,4 +17,5 @@ me: Deploy GLPI and MySQL using Docker Compose
       command: docker-compose up -d
       args:
         chdir: $PWD
+
 
