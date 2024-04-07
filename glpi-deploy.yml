@@ -8,7 +8,13 @@
         src: docker-compose.yml
         dest: $PWD/docker-compose.yml
 
+    - name: Change permissions of docker-compose.yml
+      file:
+        path: $PWD/docker-compose.yml
+        owner: vagrant
+        mode: '0644'
+
     - name: Deploy services using Docker Compose
-      command: cd /home/vagrant/ && docker-compose up -d
+      command: cd /home/vagrant/ &&  docker-compose up -d
 
 
