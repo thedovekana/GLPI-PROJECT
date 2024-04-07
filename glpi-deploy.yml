@@ -12,7 +12,7 @@
       file:
         path: $PWD/docker-compose.yml
         owner: vagrant
-        mode: '0644'
+        group: docker
 
     - name: Deploy services using Docker Compose
       command: cd /home/vagrant/ &&  docker-compose up -d
