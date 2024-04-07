@@ -1,17 +1,7 @@
-- name: Deploy GLPI and MySQL using Docker Compose
+me: Deploy GLPI and MySQL using Docker Compose
   hosts: dockerx
   become: true
   tasks:
-    - name: Install Docker Compose
-      command: curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-      args:
-        creates: /usr/local/bin/docker-compose
-
-    - name: Set execute permissions for Docker Compose
-      file:
-        path: /usr/local/bin/docker-compose
-        mode: 'a+x'
-
     - name: Copy docker-compose.yml file
       copy:
         src: docker-compose.yml
@@ -26,5 +16,4 @@
       command: docker-compose up -d
       args:
         chdir: $PWD
-
 
