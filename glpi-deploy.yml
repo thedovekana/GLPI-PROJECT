@@ -1,6 +1,6 @@
 ---
 - name: Deploy GLPI and MySQL using Docker Compose
-  hosts: dockerx
+  hosts: docker-node
   become: true
   tasks:
     - name: Copy docker-compose.yml file
