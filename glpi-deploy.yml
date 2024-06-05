@@ -2,6 +2,7 @@
 - name: Deploy GLPI and MySQL using Docker Compose
   hosts: docker-node
   become: true
+  become_user: vagrant
   tasks:
     - name: Copy docker-compose.yml file
       copy:
