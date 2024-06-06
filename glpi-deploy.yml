@@ -1,7 +1,8 @@
 ---
 - name: Deploy GLPI and MySQL using Docker Compose
-  hosts: dockerx
+  hosts: docker-node
   become: true
+  become_user: vagrant
   tasks:
     - name: Copy docker-compose.yml file
       copy:
@@ -15,6 +16,8 @@
         group: docker
 
     - name: Deploy services using Docker Compose
-      command: cd /home/vagrant/ &&  docker-compose up -d
+      shell: docker-compose up -d
+      args:
+        chdir: /home/vagrant/
 
 
